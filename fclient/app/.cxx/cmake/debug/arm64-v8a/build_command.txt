@@ -1,0 +1,21 @@
+                Executable : /home/ramazan/Android/Sdk/cmake/3.10.2.4988404/bin/cmake
+arguments : 
+-H/home/ramazan/AndroidStudioProjects/fclient/app/src/main/cpp
+-DCMAKE_FIND_ROOT_PATH=/home/ramazan/AndroidStudioProjects/fclient/app/.cxx/cmake/debug/prefab/arm64-v8a/prefab
+-DCMAKE_BUILD_TYPE=Debug
+-DCMAKE_TOOLCHAIN_FILE=/home/ramazan/Android/Sdk/ndk/21.1.6352462/build/cmake/android.toolchain.cmake
+-DANDROID_ABI=arm64-v8a
+-DANDROID_NDK=/home/ramazan/Android/Sdk/ndk/21.1.6352462
+-DANDROID_PLATFORM=android-21
+-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
+-DCMAKE_ANDROID_NDK=/home/ramazan/Android/Sdk/ndk/21.1.6352462
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/ramazan/AndroidStudioProjects/fclient/app/build/intermediates/cmake/debug/obj/arm64-v8a
+-DCMAKE_MAKE_PROGRAM=/home/ramazan/Android/Sdk/cmake/3.10.2.4988404/bin/ninja
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_SYSTEM_VERSION=21
+-B/home/ramazan/AndroidStudioProjects/fclient/app/.cxx/cmake/debug/arm64-v8a
+-GNinja
+jvmArgs : 
+
+Build command args:
