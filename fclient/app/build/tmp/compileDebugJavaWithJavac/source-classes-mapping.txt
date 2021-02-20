@@ -1,4 +1,0 @@
-ru/iu3/fclient/BuildConfig.java
- ru.iu3.fclient.BuildConfig
-ru/iu3/fclient/MainActivity.java
- ru.iu3.fclient.MainActivity
