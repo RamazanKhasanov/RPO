@@ -1,0 +1,2 @@
+/home/ramazan/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/linux-x86_64/bin/i686-linux-android-ar qc libspdlog.a  CMakeFiles/spdlog.dir/src/spdlog.cpp.o CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o CMakeFiles/spdlog.dir/src/color_sinks.cpp.o CMakeFiles/spdlog.dir/src/file_sinks.cpp.o CMakeFiles/spdlog.dir/src/async.cpp.o CMakeFiles/spdlog.dir/src/cfg.cpp.o CMakeFiles/spdlog.dir/src/fmt.cpp.o
+/home/ramazan/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/linux-x86_64/bin/i686-linux-android-ranlib libspdlog.a
