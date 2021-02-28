@@ -20,6 +20,10 @@
         "source": "C:\\Users\\xasan\\AndroidStudioProjects\\fclient\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
+        "merged": "C:\\Users\\xasan\\AndroidStudioProjects\\fclient\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_pinpad.xml.flat",
+        "source": "C:\\Users\\xasan\\AndroidStudioProjects\\fclient\\app\\src\\main\\res\\layout\\activity_pinpad.xml"
+    },
+    {
         "merged": "C:\\Users\\xasan\\AndroidStudioProjects\\fclient\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\xasan\\AndroidStudioProjects\\fclient\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },

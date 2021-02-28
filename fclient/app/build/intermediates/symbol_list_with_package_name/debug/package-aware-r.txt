@@ -1771,6 +1771,19 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btnClickMe
+id btnKey0
+id btnKey1
+id btnKey2
+id btnKey3
+id btnKey4
+id btnKey5
+id btnKey6
+id btnKey7
+id btnKey8
+id btnKey9
+id btnOK
+id btnReset
 id buttonPanel
 id cache_measures
 id cancel_button
@@ -1982,7 +1995,6 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
-id sample_text
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2083,6 +2095,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id txtPin
 id unchecked
 id uniform
 id unlabeled
@@ -2156,6 +2169,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_pinpad
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2567,6 +2581,7 @@ style Base_Widget_MaterialComponents_Snackbar
 style Base_Widget_MaterialComponents_TextInputEditText
 style Base_Widget_MaterialComponents_TextInputLayout
 style Base_Widget_MaterialComponents_TextView
+style Button
 style CardView
 style CardView_Dark
 style CardView_Light
