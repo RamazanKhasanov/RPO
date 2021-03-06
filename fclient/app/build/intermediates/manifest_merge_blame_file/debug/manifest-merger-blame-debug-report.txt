@@ -10,41 +10,47 @@
 9        android:targetSdkVersion="30" />
 9-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml
 10
-11    <application
-11-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:5:5-20:19
-12        android:allowBackup="true"
-12-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:6:9-35
-13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.3.1] C:\Users\xasan\.gradle\caches\transforms-2\files-2.1\8dbd859d1cd89239b42e7382b4fc40d7\core-1.3.1\AndroidManifest.xml:24:18-86
-14        android:debuggable="true"
-15        android:icon="@mipmap/ic_launcher"
-15-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:7:9-43
-16        android:label="@string/app_name"
-16-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:8:9-41
-17        android:roundIcon="@mipmap/ic_launcher_round"
-17-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:9:9-54
-18        android:supportsRtl="true"
-18-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:10:9-35
-19        android:testOnly="true"
-20        android:theme="@style/Theme.Fclient" >
-20-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:11:9-45
-21        <activity android:name="ru.iu3.fclient.MainActivity" >
-21-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:12:9-18:20
-21-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:12:19-47
-22            <intent-filter>
-22-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:13:13-17:29
-23                <action android:name="android.intent.action.MAIN" />
-23-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:14:17-69
-23-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:14:25-66
-24
-25                <category android:name="android.intent.category.LAUNCHER" />
-25-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:16:17-77
-25-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:16:27-74
-26            </intent-filter>
-27        </activity>
-28        <activity android:name="ru.iu3.fclient.PinpadActivity" />
-28-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:19:9-52
-28-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:19:19-49
-29    </application>
-30
-31</manifest>
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:4:5-67
+11-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:4:22-64
+12
+13    <application
+13-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:5:5-21:19
+14        android:allowBackup="true"
+14-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:7:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.3.1] C:\Users\xasan\.gradle\caches\transforms-2\files-2.1\8dbd859d1cd89239b42e7382b4fc40d7\core-1.3.1\AndroidManifest.xml:24:18-86
+16        android:debuggable="true"
+17        android:icon="@mipmap/ic_launcher"
+17-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:8:9-43
+18        android:label="@string/app_name"
+18-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:9:9-41
+19        android:roundIcon="@mipmap/ic_launcher_round"
+19-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:10:9-54
+20        android:supportsRtl="true"
+20-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:11:9-35
+21        android:testOnly="true"
+22        android:theme="@style/Theme.Fclient"
+22-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:12:9-45
+23        android:usesCleartextTraffic="true" >
+23-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:6:9-44
+24        <activity android:name="ru.iu3.fclient.MainActivity" >
+24-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:13:9-19:20
+24-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:13:19-47
+25            <intent-filter>
+25-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:14:13-18:29
+26                <action android:name="android.intent.action.MAIN" />
+26-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:15:17-69
+26-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:15:25-66
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:17:17-77
+28-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:17:27-74
+29            </intent-filter>
+30        </activity>
+31        <activity android:name="ru.iu3.fclient.PinpadActivity" />
+31-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:20:9-52
+31-->C:\Users\xasan\AndroidStudioProjects\fclient\app\src\main\AndroidManifest.xml:20:19-49
+32    </application>
+33
+34</manifest>
