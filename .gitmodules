@@ -1,0 +1,3 @@
+[submodule "backend/front"]
+	path = backend/front
+	url = "https://github.com/eirslett/frontend-maven-plugin#working-directory"
