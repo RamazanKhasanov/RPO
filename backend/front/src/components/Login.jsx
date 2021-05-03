@@ -1,6 +1,8 @@
 import React from "react";
 import BackendService from "../services/BackendService";
 import Utils from "../utils/Utils";
+import {connect} from "react-redux";
+import {userActions} from "../utils/Rdx";
 
 class Login extends React.Component {
 
@@ -11,7 +13,7 @@ class Login extends React.Component {
             password: '',
             loggingIn: false,
             submitted: false,
-            error_message: null,
+        //    error_message: null,
         };
 
         this.handleChange = this.handleChange.bind(this)
@@ -25,31 +27,31 @@ class Login extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState({submitted: true});
+        this.setState({submitted: true, loggingIn: true, error_message: null});
         const{username, password} = this.state;
         BackendService.login(username, password)
             .then( resp => {
-                console.log(resp.data)
-                Utils.saveUser(resp.data)
+                this.props.dispatch(userActions.login(resp.data))
                 this.props.history.push('/home')
             })
             .catch(
                 err => {
-                    if (err.response && err.response.status === 401)
+                   /* if (err.response && err.response.status === 401)
                         this.setState({error_message: "Ошибка авторизации", loggingIn: false});
                     else
-                        this.setState({error_message: err.error_message, loggingIn: false});
+                        this.setState({error_message: err.message, loggingIn: false}); */
+                    this.setState({loggingIn: false});
                 }
             )
     }
 
     render() {
-        console.log("render")
+       // console.log("render")
         let{submitted, username, password, loggingIn} = this.state;
         return (
             <div className="col-md-6 mr-0">
-                {this.state.error_message &&
-                <div className="alert alert-danger mt-1 mr-0 ml-0">{this.state.error_message}</div>}
+                {/*this.state.error_message &&
+                <div className="alert alert-danger mt-1 mr-0 ml-0">{this.state.error_message}</div>*/}
                 <h2>Вход</h2>
                 <form name ="form" onSubmit={this.handleSubmit}>
                     <div className="form-group">
@@ -78,4 +80,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default connect()(Login);

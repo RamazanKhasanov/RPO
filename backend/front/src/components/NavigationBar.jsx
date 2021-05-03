@@ -6,6 +6,8 @@ import {Link, withRouter} from "react-router-dom";
 import {faUser} from "@fortawesome/free-solid-svg-icons/faUser";
 import Utils from "../utils/Utils";
 import BackendService from "../services/BackendService";
+import {connect} from "react-redux";
+import {userActions} from "../utils/Rdx";
 
 class NavigationBar extends React.Component {
 
@@ -41,16 +43,27 @@ class NavigationBar extends React.Component {
                       <Nav.Link onClick={()=>{this.props.history.push("/home")}}>Yet another home</Nav.Link>
                   </Nav>
               </Navbar.Collapse>
-              <Navbar.Text>{uname}</Navbar.Text>
-              {uname &&
+              <Navbar.Text>{this.props.user && this.props.user.name}</Navbar.Text>
+              {this.props.user &&
                 <Nav.Link onClick={this.logout}><FontAwesomeIcon icon={faUser} fixedWidth/>{' '}Выход</Nav.Link>
               }
-              {!uname &&
+              {!this.props.user &&
                  <Nav.Link as={Link} to="/login"><FontAwesomeIcon icon={faUser} fixedWidth/>{' '}Вход</Nav.Link>
               }
           </Navbar>
         );
     }
+
+    logout() {
+        BackendService.logout().finally(() => {
+            this.props.dispatch(userActions.logout())
+            this.props.history.push('/login')
+        })
+    }
 }
 
-export default withRouter(NavigationBar)
+function mapStateToProps(state){
+    const {user} = state.authentication;
+    return {user};
+}
+export default connect(mapStateToProps)(withRouter(NavigationBar));
