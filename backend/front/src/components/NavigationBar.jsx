@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Nav} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import {faBars, faHome} from '@fortawesome/free-solid-svg-icons';
 import {Link, withRouter} from "react-router-dom";
 import {faUser} from "@fortawesome/free-solid-svg-icons/faUser";
 import Utils from "../utils/Utils";
@@ -33,7 +33,12 @@ class NavigationBar extends React.Component {
         let uname = Utils.getUserName();
         return (
           <Navbar bg="light" expand="lg">
-              <Navbar.Brand><FontAwesomeIcon icon={faHome}/>{' '}myRPO</Navbar.Brand>
+              <button type="button"
+                      className="btn btn-outline-secondary mr-2"
+                      onClick={this.props.toggleSideBar}>
+                  <FontAwesomeIcon icon={faBars}/>
+              </button>
+              <Navbar.Brand>myRPO</Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="mr-auto">

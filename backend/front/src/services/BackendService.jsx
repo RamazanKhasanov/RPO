@@ -15,6 +15,28 @@ class BackendService {
         /* return axios.get (`${AUTH_URL}/logout`, {headers: {Authorization: Utils.getToken()}}) */
         return axios.get(`${AUTH_URL}/logout`)
     }
+
+    /* Countries */
+
+    retrieveAllCountries(){
+        return axios.get(`${API_URL}/countries`);
+    }
+
+    retrieveCountry(id){
+        return axios.get(`${API_URL}/countries/${id}`);
+    }
+
+    createCountry(country){
+        return axios.post(`${API_URL}/countries`, country);
+    }
+
+    updateCountry(country){
+        return axios.put(`${API_URL}/countries/${country.id}`, country);
+    }
+
+    deleteCountries(countries){
+        return axios.post(`${API_URL}/deletecountries`, countries);
+    }
 }
 
 function showError(msg)
