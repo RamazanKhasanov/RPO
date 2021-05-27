@@ -5,7 +5,7 @@ import {faEdit, faPlus, faTrash} from "@fortawesome/free-solid-svg-icons";
 import Alert from "./Alert";
 import PaginationComponent from "./PaginationComponent";
 
-class CountryListComponent extends Component {
+class UserListComponent extends Component {
 
     constructor(props) {
         super(props);
@@ -99,7 +99,7 @@ class CountryListComponent extends Component {
             .then(
                 resp => {
                     this.setState({countries: resp.data.content,
-                    totalCount: resp.data.totalElements, page: cp, hidden: false});
+                        totalCount: resp.data.totalElements, page: cp, hidden: false});
                 }
             )
             .catch(() => {this.setState({totalCount: 0, hidden: true})})
@@ -152,24 +152,24 @@ class CountryListComponent extends Component {
                         <tbody>
                         {
                             this.state.countries && this.state.countries.map((country, index)=>
-                            <tr key={country.id}>
-                                <td>{country.name}</td>
-                                <td>
-                                    <div className="btn-toolbar">
-                                        <div className="btn-group ml-auto">
-                                            <button className="btn btn-outline-secondary btn-sm btn-toolbar"
-                                                    onClick={()=>this.updateCountryClicked(country.id)}>
-                                                <FontAwesomeIcon icon={faEdit} fixedWidth/>
-                                            </button>
+                                <tr key={country.id}>
+                                    <td>{country.name}</td>
+                                    <td>
+                                        <div className="btn-toolbar">
+                                            <div className="btn-group ml-auto">
+                                                <button className="btn btn-outline-secondary btn-sm btn-toolbar"
+                                                        onClick={()=>this.updateCountryClicked(country.id)}>
+                                                    <FontAwesomeIcon icon={faEdit} fixedWidth/>
+                                                </button>
+                                            </div>
+                                            <div className="btn-group ml-2 mt-1">
+                                                <input type="checkbox" name={index}
+                                                       checked={this.state.checkedItems.length > index ? this.state.checkedItems[index]: false}
+                                                       onChange={this.handleCheckChange}/>
+                                            </div>
                                         </div>
-                                        <div className="btn-group ml-2 mt-1">
-                                            <input type="checkbox" name={index}
-                                                   checked={this.state.checkedItems.length > index ? this.state.checkedItems[index]: false}
-                                                   onChange={this.handleCheckChange}/>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
                             )
                         }
                         </tbody>
@@ -187,4 +187,4 @@ class CountryListComponent extends Component {
     }
 }
 
-export default CountryListComponent;
+export default UserListComponent;

@@ -46,7 +46,7 @@ function logout() {
 
 /* REDUCERS */
 
-let user = Utils.getUserName()
+let user = Utils.getUser()
 const initialState = user ? {user}: {}
 
 function authentication(state = initialState, action) {

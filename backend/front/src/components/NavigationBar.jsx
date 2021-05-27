@@ -30,7 +30,7 @@ class NavigationBar extends React.Component {
     }
 
     render() {
-        let uname = Utils.getUserName();
+        let uname = Utils.getUser();
         return (
           <Navbar bg="light" expand="lg">
               <button type="button"
