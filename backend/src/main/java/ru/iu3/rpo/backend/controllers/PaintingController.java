@@ -1,13 +1,18 @@
 package ru.iu3.rpo.backend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import javax.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import ru.iu3.rpo.backend.models.Artist;
 import ru.iu3.rpo.backend.models.Painting;
 import ru.iu3.rpo.backend.repositories.PaintingRepository;
+import ru.iu3.rpo.backend.tools.DataValidationException;
 
 import java.util.*;
 
@@ -19,8 +24,17 @@ public class PaintingController {
     PaintingRepository paintingRepository;
 
     @GetMapping("/paintings")
-    public List<Painting> getAllPaintings() {
-        return paintingRepository.findAll();
+    public Page<Painting> getAllPaintings(@RequestParam("page") int page, @RequestParam("limit") int limit) {
+        return paintingRepository.findAll(PageRequest.of(page, limit, Sort.by(Sort.Direction.ASC,"name")));
+    }
+
+    @GetMapping("/paintings/{id}")
+    public ResponseEntity<Painting> getPainting(@PathVariable(value = "id") Long paintingId)
+            throws DataValidationException
+    {
+        Painting painting = paintingRepository.findById(paintingId)
+                .orElseThrow(()-> new DataValidationException("Картина с таким индексом не найден"));
+        return ResponseEntity.ok(painting);
     }
 
     @PostMapping("/paintings")
@@ -49,19 +63,9 @@ public class PaintingController {
         return ResponseEntity.ok(painting);
     }
 
-    @DeleteMapping("/painting/{id}")
-    public Map<String, Boolean> deletePainting(@PathVariable(value = "id") Long paintingId) {
-        Optional<Painting> painting = paintingRepository.findById(paintingId);
-        Map<String, Boolean> response = new HashMap<>();
-        if (painting.isPresent())
-        {
-            paintingRepository.delete(painting.get());
-            response.put("deleted", Boolean.TRUE);
-        }
-        else
-        {
-            response.put("deleted", Boolean.FALSE);
-        }
-        return response;
+    @PostMapping("/deletepaintings")
+    public ResponseEntity deletePaintings(@Valid @RequestBody List<Painting> paintings){
+        paintingRepository.deleteAll(paintings);
+        return new ResponseEntity(HttpStatus.OK);
     }
 }

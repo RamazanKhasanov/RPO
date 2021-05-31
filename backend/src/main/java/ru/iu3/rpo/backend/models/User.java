@@ -34,6 +34,9 @@ public class User {
     @Column(name = "salt")
     public String salt;
 
+    @Transient
+    public String np;
+
     @Column(name = "token")
     public String token;
 
